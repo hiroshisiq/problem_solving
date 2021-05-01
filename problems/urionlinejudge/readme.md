@@ -1,8 +1,3 @@
-
-## Quiz 04
-
-This section includes challanges about stacks, queues and circular lists.
-
 ## Content
 The challanges included here can all be found at https://www.urionlinejudge.com.br/
 
