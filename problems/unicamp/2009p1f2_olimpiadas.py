@@ -19,8 +19,8 @@ def read_countries_and_categories() -> Tuple[int, int]:
 
 def sort_countries_by_medal_count(countries: List[Country]) -> List[Country]:
     sorted_countries = sorted(countries, key=lambda country: country.bronze_medals, reverse=True)
-    sorted_countries = sorted(countries, key=lambda country: country.silver_medals, reverse=True)
-    sorted_countries = sorted(countries, key=lambda country: country.gold_medals, reverse=True)
+    sorted_countries = sorted(sorted_countries, key=lambda country: country.silver_medals, reverse=True)
+    sorted_countries = sorted(sorted_countries, key=lambda country: country.gold_medals, reverse=True)
     return sorted_countries
 
 if __name__ == "__main__":
