@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 from typing import Tuple, List
-from dataclasses import dataclass
 
-@dataclass
 class Country():
-    id: int
-    gold_medals: int = 0
-    silver_medals: int = 0
-    bronze_medals: int = 0
+    def __init__(self, id: int):
+        self.id = id
+        self.gold_medals = 0
+        self.silver_medals = 0
+        self.bronze_medals = 0
+
 
 def read_medal_winners() -> Tuple[int, int, int]:
     g, s, b = [int(i) for i in input().split(' ')]
