@@ -2,7 +2,7 @@ import subprocess
 
 def run_script(script_path: str, input_path: str) -> str:
     with open(input_path, 'r') as input_file:
-        result: CompletedProcess = subprocess.run(
+        result = subprocess.run(
             ['python', script_path],
             stdin=input_file,
             stdout=subprocess.PIPE,
