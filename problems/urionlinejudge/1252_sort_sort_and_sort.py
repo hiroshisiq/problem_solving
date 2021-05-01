@@ -1,13 +1,11 @@
 from typing import Tuple, List
 
-
 class Number():
     def __init__(self, value: int, div: int):
         self.value = str(value)                                # true value
         self.modByDiv = value % div                            # mod by div
         self.modBy2 = value % 2                                # is even
         self.secondaryValue = -value if self.modBy2 else value # last untie
-
 
 def read_configuration() -> Tuple[int, int]:
     m, n = [int(i) for i in input().split(' ')]
