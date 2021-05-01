@@ -2,10 +2,10 @@ from typing import Tuple, List
 
 class Number():
     def __init__(self, value: int, div: int):
-        self.value = str(value)                                 # true value
-        self.rem = value % div if value > 0 else -(value % div) # mod by div
-        self.remBy2 = value % 2                                 # is even
-        self.secondaryValue = -value if self.remBy2 else value  # last untie
+        self.value = str(value)                                  # true value
+        self.rem = value % div if value > 0 else -(-value % div) # mod by div
+        self.remBy2 = abs(value % 2)                             # is even
+        self.secondaryValue = -value if self.remBy2 else value   # last untie
 
 def read_configuration() -> Tuple[int, int]:
     m, n = [int(i) for i in input().split(' ')]
@@ -29,6 +29,6 @@ if __name__ == "__main__":
         print('\n'.join(result))
 
         # Get next round (end if size and mod is equal to zero)
-        size, mod = read_configuration()
+        size, div = read_configuration()
 
     print('0 0')
