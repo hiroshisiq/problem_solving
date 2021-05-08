@@ -17,9 +17,13 @@ def array_to_depth(array: List[int], size: int, depth: int) -> str:
     return f'{left} {depth} {right}'.strip()
 
 
-if __name__ == "__main__":
+def resolve_permutation():
     number_of_test_cases = int(input())
     for _ in range(number_of_test_cases):
         size, array = read_test_case()
         result = array_to_depth(array, int(size), 0)
         print(result)
+
+
+if __name__ == "__main__":
+    resolve_permutation()
