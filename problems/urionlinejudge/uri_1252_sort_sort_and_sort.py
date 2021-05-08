@@ -1,23 +1,29 @@
+#!/usr/bin/env python3
 from typing import Tuple, List
 
-class Number():
+
+class Number:
     def __init__(self, value: int, div: int):
-        self.value = str(value)                                  # true value
-        self.rem = value % div if value > 0 else -(-value % div) # mod by div
-        self.remBy2 = abs(value % 2)                             # is even
-        self.secondaryValue = -value if self.remBy2 else value   # last untie
+        self.value = str(value)                                   # true value
+        self.rem = value % div if value > 0 else -(-value % div)  # mod by div
+        self.remBy2 = abs(value % 2)                              # is even
+        self.secondaryValue = -value if self.remBy2 else value    # last untie
+
 
 def read_configuration() -> Tuple[int, int]:
     m, n = [int(i) for i in input().split(' ')]
-    return (m, n)
+    return m, n
+
 
 def read_list(size: int, div: int) -> List[Number]:
     return [Number(int(input()), div) for _ in range(size)]
 
+
 def sort_numbers(numbers: List[Number]) -> List[Number]:
     return sorted(numbers, key=lambda n: (n.rem, -n.remBy2, n.secondaryValue))
 
-if __name__ == "__main__":
+
+def solve_problem():
     size, div = read_configuration()
 
     while size != 0 and div != 0:
@@ -32,3 +38,7 @@ if __name__ == "__main__":
         size, div = read_configuration()
 
     print('0 0')
+
+
+if __name__ == "__main__":
+    solve_problem()
