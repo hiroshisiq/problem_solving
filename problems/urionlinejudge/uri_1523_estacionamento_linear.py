@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from typing import List, Tuple
 
 # Car is a tuple with arrival and departure time
@@ -6,7 +7,7 @@ Car = Tuple[int, int]
 
 def read_line() -> Tuple[int, int]:
     x, y = [int(i) for i in input().split(' ')]
-    return (x, y)
+    return x, y
 
 
 def read_all() -> List[Tuple[int, int]]:
@@ -34,7 +35,7 @@ def run_test_case(
     for _ in range(number_of_cars):
         car = cars.pop(0)
 
-        # Remove cars while last car leaved before car arrival
+        # Remove cars while last car left before car arrival
         while parking_lot and parking_lot[-1][1] <= car[0]:
             parking_lot.pop()
 
@@ -49,11 +50,11 @@ def run_test_case(
         if len(parking_lot) > parking_lot_size:
             return False
 
-    # All cars were parked succesfully
+    # All cars were parked successfully
     return True
 
 
-if __name__ == "__main__":
+def solve_problem():
     info = read_all()
 
     while info:
@@ -65,3 +66,7 @@ if __name__ == "__main__":
             print('Sim')
         else:
             print('Nao')
+
+
+if __name__ == "__main__":
+    solve_problem()

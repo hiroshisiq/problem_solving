@@ -12,14 +12,19 @@ def get_postorder(size: int, preorder: str, inorder: str) -> str:
 
     left = get_postorder(root, preorder[1:], inorder) if root != 0 else ''
 
-    right = get_postorder(size-root-1, preorder[root+1:size], inorder[root+1:size]) if root != size-1 else ''
+    right = get_postorder(size-root-1, preorder[root+1:size], inorder[root+1:size]) \
+        if root != size-1 else ''
 
     return left + right + inorder[root]
 
 
-if __name__ == "__main__":
+def solve_problem():
     number_of_test_cases = int(input())
     for _ in range(number_of_test_cases):
         s, p, i = read_case()
         result = get_postorder(size=s, preorder=p, inorder=i)
         print(result)
+
+
+if __name__ == "__main__":
+    solve_problem()
