@@ -3,7 +3,7 @@ import pytest
 from tests.run_script import run_script, read_text
 
 RESOURCES_PATH = './tests/unicamp/resources/2016p1f1'
-EXECUTABLE_PATH = './problems/unicamp/2016p1f1_tacos_de_bilhar.py'
+EXECUTABLE_PATH = './problems/unicamp/uni_2016p1f1_tacos_de_bilhar.py'
 
 
 @pytest.mark.parametrize(
