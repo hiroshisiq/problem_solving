@@ -23,6 +23,10 @@ python update_readme.py
 ```
 
 ## Content
+### Kattis
+The challenges included in this section can all be found at https://open.kattis.com/
+
+- [ferryloading4](https://open.kattis.com/problems/ferryloading4) Ferry Loading IV
 ### Unicamp
 The challenges included in this section can all be found at https://olimpiada.ic.unicamp.br/pratique/
 
