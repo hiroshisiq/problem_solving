@@ -2,13 +2,13 @@
 from typing import Tuple, List
 
 
-def read_test_case() -> Tuple[str, List[str]]:
+def read_test_case() -> Tuple[str, List[int]]:
     array_size = input()
-    test_array = input().split(' ')
+    test_array = [int(i) for i in input().split(' ')]
     return array_size, test_array
 
 
-def array_to_depth(array: List[str], size: int, depth: int) -> str:
+def array_to_depth(array: List[int], size: int, depth: int) -> str:
     index = array.index(max(array))
 
     left = array_to_depth(array[:index], index, depth+1) if index != 0 else ''
