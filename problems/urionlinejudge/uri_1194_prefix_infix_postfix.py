@@ -8,12 +8,9 @@ def read_case() -> Tuple[int, str, str]:
 
 
 def get_postorder(size: int, preorder: str, inorder: str) -> str:
-    try:
-        root = inorder.index(preorder[0])
-    except IndexError:
-        root = -1
+    root = inorder.index(preorder[0])
 
-    left = get_postorder(root, preorder[1:root+1], inorder[0:root]) if root != 0 else ''
+    left = get_postorder(root, preorder[1:], inorder) if root != 0 else ''
 
     right = get_postorder(size-root-1, preorder[root+1:size], inorder[root+1:size]) if root != size-1 else ''
 
