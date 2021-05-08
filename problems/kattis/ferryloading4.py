@@ -36,25 +36,18 @@ def get_number_of_crosses(ferry_length_in_cm: int, car_list: List[Car], number_o
     queues = {'left': deque(), 'right': deque()}
     [queues[car.side].append(car) for car in car_list]
 
-    # While there is a car in the left queue
-    left_counter = 0
-    while queues['left']:
+    counter = 0
+    while any(queues.values()):
         load_ferry(queues['left'], ferry_length_in_cm)
-        left_counter += 1
+        counter += 1
 
-    # While there is a car in the right queue
-    right_counter = 0
-    while queues['right']:
+        if not any(queues.values()):
+            break
+
         load_ferry(queues['right'], ferry_length_in_cm)
-        right_counter += 1
+        counter += 1
 
-    difference = abs(left_counter - right_counter)
-
-    # If the any difference greater than 1 means empty crosses
-    if difference > 1:
-        return left_counter + right_counter + difference - 1
-    else:
-        return left_counter + right_counter
+    return counter
 
 
 def solve_problem():
