@@ -5,6 +5,7 @@ from tests.run_script import run_script, read_text
 RESOURCES_PATH = './tests/urionlinejudge/resources/1523/'
 EXECUTABLE_PATH = './problems/urionlinejudge/uri_1523_estacionamento_linear.py'
 
+
 @pytest.mark.parametrize(
     'input_path, output_path',
     [(f'{RESOURCES_PATH}/case-1.in', f'{RESOURCES_PATH}/case-1.out')]

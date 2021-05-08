@@ -5,6 +5,7 @@ from tests.run_script import run_script, read_text
 RESOURCES_PATH = './tests/urionlinejudge/resources/1252/'
 EXECUTABLE_PATH = './problems/urionlinejudge/uri_1252_sort_sort_and_sort.py'
 
+
 @pytest.mark.parametrize(
     'input_path, output_path',
     [(f'{RESOURCES_PATH}/case_1.in', f'{RESOURCES_PATH}/case_1.out'),
