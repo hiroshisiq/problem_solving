@@ -1,10 +1,10 @@
 import pytest
-from problems.urionlinejudge.uri_1194_prefix_infix_postfix import get_postorder
+from problems.urionlinejudge.uri_1194_pre_in_pos import get_postorder
 
 from tests.run_script import run_script, read_text
 
 RESOURCES_PATH = './tests/urionlinejudge/resources/1194'
-EXECUTABLE_PATH = './problems/urionlinejudge/uri_1194_prefix_infix_postfix.py'
+EXECUTABLE_PATH = './problems/urionlinejudge/uri_1194_pre_in_pos.py'
 
 @pytest.mark.parametrize(
     'input_path, output_path',
