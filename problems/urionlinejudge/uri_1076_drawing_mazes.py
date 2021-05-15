@@ -4,7 +4,8 @@ from typing import Dict, Set
 Graph = Dict[str, Set[str]]
 
 
-def depth_first_search(graph: Graph, initial_vertex: str, visited: Graph, counter: int = 0):
+# Does a DFS and returns the number "movements" necessary to complete the search
+def depth_first_search(graph: Graph, initial_vertex: str, visited: Graph, counter: int = 0) -> int:
     visited.add(initial_vertex)
 
     for next_vertex in graph[initial_vertex] - visited:
