@@ -1,6 +1,6 @@
 import argparse
+import subprocess
 from os import path, mkdir
-import sys
 
 parser = argparse.ArgumentParser()
 
@@ -91,5 +91,5 @@ with open(f'tests/{args.provider}/test_{args.provider[:3]}_{args.id}_{args.name}
         "    assert got == expected\n"
     )
 
-print(args.provider)
+subprocess.run(['python', 'scripts/update_readme.py'])
 print('Finished!')
