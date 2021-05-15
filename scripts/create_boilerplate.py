@@ -33,7 +33,7 @@ if not path.exists(f'problems/{args.provider}'):
 # Add problem to readme
 with open(f'problems/{args.provider}/readme.md', "a") as f:
     f.write(
-        f'- [{args.id}]({args.url}) {args.name}\n'
+        f'- [{args.id}]({args.url}) {" ".join([s.capitalize()  for s in args.name.split("_")])}\n'
     )
 
 # Create solution boiler plate
