@@ -1,10 +1,10 @@
 import os
 
-PATH = '../problems'
+PATH = './problems'
 content = ''
 
 # Open base file
-with open('base_readme.md', 'r') as f:
+with open('./scripts/base_readme.md', 'r') as f:
     content += f.read()
 
 # Get all readme.md files inside PATH and append its content
@@ -20,7 +20,7 @@ for path, dirs, files in os.walk(PATH):
             content += f.read()
 
 # Write final readme to root directory
-with open('../readme.md', 'w+') as f:
+with open('./readme.md', 'w+') as f:
     f.write(content)
 
 
