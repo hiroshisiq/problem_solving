@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-
-
-# DFS algorithm
 from typing import Dict, Set
 
 Graph = Dict[str, Set[str]]
