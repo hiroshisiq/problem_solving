@@ -18,7 +18,7 @@ def solve_problem():
     number_of_cases = int(input())
 
     for _ in range(number_of_cases):
-        initial_vetex = int(input())
+        initial_vertex = int(input())
         number_of_vertices, number_of_edges = [int(i) for i in input().split()]
 
         # Initialize graph (incidence list representation)
@@ -30,7 +30,7 @@ def solve_problem():
             graph[vertex_a].add(vertex_b)
             graph[vertex_b].add(vertex_a)
 
-        counter = depth_first_search(graph, initial_vetex, set())
+        counter = depth_first_search(graph, initial_vertex, set())
         print(counter)
 
 
