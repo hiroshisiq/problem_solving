@@ -37,6 +37,10 @@ python scripts/crate_boilerplate.py --provider urionlinejudge --id 1076 --name d
 The challenges included in this section can all be found at https://open.kattis.com/
 
 - [ferryloading4](https://open.kattis.com/problems/ferryloading4) Ferry Loading IV
+### Online Judge
+The challenges included in this section can all be found at https://onlinejudge.org
+
+- [336](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=272) A Node Too Far
 ### Unicamp
 The challenges included in this section can all be found at https://olimpiada.ic.unicamp.br/pratique/
 
