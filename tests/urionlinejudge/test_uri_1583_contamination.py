@@ -7,7 +7,9 @@ EXECUTABLE_PATH = './problems/urionlinejudge/uri_1583_contamination.py'
 
 
 @pytest.mark.parametrize(
-    'input_path, output_path',    [(f'{RESOURCES_PATH}/case_1.in', f'{RESOURCES_PATH}/case_1.out')]
+    'input_path, output_path',
+    [(f'{RESOURCES_PATH}/case_1.in', f'{RESOURCES_PATH}/case_1.out'),
+     (f'{RESOURCES_PATH}/case_2.in', f'{RESOURCES_PATH}/case_2.out')]
 )
 def test_uri_1583_contamination(input_path: str, output_path: str):
     got = run_script(EXECUTABLE_PATH, input_path)
