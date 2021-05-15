@@ -81,7 +81,7 @@ with open(f'tests/{args.provider}/test_{args.provider[:3]}_{args.id}_{args.name}
         "\n"
         "\n"
         "@pytest.mark.parametrize(\n"
-        "    'input_path, output_path',"
+        "    'input_path, output_path',\n"
         "    [(f\'{RESOURCES_PATH}/case_1.in\', f\'{RESOURCES_PATH}/case_1.out\')]\n"
         ")\n"
         f'def test_{args.provider[:3]}_{args.id}_{args.name}(input_path: str, output_path: str):\n'
