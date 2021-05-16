@@ -35,7 +35,7 @@ def breadth_first_search(graph: Graph, start: int, ttl: int) -> int:
     while queue:
         node = queue.popleft()
 
-        for neighbour in graph[node]:
+        for neighbour in graph.get(node, set()):
             if neighbour not in visited:
                 visited.add(neighbour)
                 queue.append(neighbour)
