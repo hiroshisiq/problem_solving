@@ -31,18 +31,23 @@ def breadth_first_search(graph: Graph, start: int, ttl: int) -> int:
     visited = set([start])
     queue = deque([start])
     ttl_dict = {start: 0}
+    isolated_nodes = set()
 
     while queue:
         node = queue.popleft()
 
-        for neighbour in graph.setdefault(node, set()):
+        nodes = graph.get(node, set())
+        if not nodes:
+            isolated_nodes.add(node)
+
+        for neighbour in nodes:
             if neighbour not in visited:
                 visited.add(neighbour)
                 queue.append(neighbour)
                 ttl_dict[neighbour] = ttl_dict[node] + 1
 
     reached_nodes = list(filter(lambda x: (ttl_dict[x] <= ttl), ttl_dict))
-    return len(reached_nodes)
+    return len(reached_nodes) - len(isolated_nodes)
 
 
 def solve_problem():
@@ -70,6 +75,9 @@ def solve_problem():
             # Avoid using f-strings here to keep python 3.5.1 compatibility
             print("Case {}: {} nodes not reachable from node {} with TTL = {}."
                   .format(case_counter, unreached_count, start, ttl))
+
+            if case_counter == 319:
+                a = 1
 
             case_counter += 1
 
