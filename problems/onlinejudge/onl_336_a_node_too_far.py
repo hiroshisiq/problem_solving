@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-from typing import List
+from collections import deque
+from typing import List, Dict, Set
+
+Graph = Dict[int, Set[int]]
 
 
 def read_line() -> List[int]:
@@ -27,7 +30,17 @@ def read_test_case(number_of_nodes: int):
 def solve_problem():
     number_of_nodes = int(input())
     while number_of_nodes:
+        # Initialize graph (incidence list representation)
+        graph = dict()
+
+        # Read input
         edges, vertex_ttl = read_test_case(number_of_nodes)
+
+        # Populate graph
+        for i in range(0, 2*number_of_nodes, 2):
+            graph.setdefault(i, set()).add(edges[i+1])
+            graph.setdefault(i+1, set()).add(edges[i])
+        del edges, i
 
         # Read empty line and next test case size
         input()
