@@ -27,8 +27,14 @@ def read_test_case(number_of_nodes: int):
     return line[:2*number_of_nodes], line[2*number_of_nodes:]
 
 
+def breadth_first_search(graph: Graph, start: int, ttl: int) -> int:
+    # reached nodes
+    return 0
+
+
 def solve_problem():
     number_of_nodes = int(input())
+    case_counter = 1
     while number_of_nodes:
         # Initialize graph (incidence list representation)
         graph = dict()
@@ -41,6 +47,16 @@ def solve_problem():
             graph.setdefault(i, set()).add(edges[i+1])
             graph.setdefault(i+1, set()).add(edges[i])
         del edges, i
+
+        # Solve test cases for this graph
+        for i in range(0, len(vertex_ttl), 2):
+            start, ttl = vertex_ttl[i:i+2]
+            reached_count = breadth_first_search(graph, start, ttl)
+
+            print(f'Case {case_counter}: '
+                  f'{number_of_nodes-reached_count} nodes not reachable from node {start} with TTL = {ttl}.')
+
+            case_counter += 1
 
         # Read empty line and next test case size
         input()
