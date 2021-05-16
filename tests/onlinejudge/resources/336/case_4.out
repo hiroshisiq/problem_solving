@@ -1,0 +1,4 @@
+Case 1: 1 nodes not reachable from node 1 with TTL = 2.
+Case 2: 3 nodes not reachable from node 5 with TTL = 14.
+Case 3: 1 nodes not reachable from node 3 with TTL = 2.
+Case 4: 4 nodes not reachable from node 7 with TTL = 0.
