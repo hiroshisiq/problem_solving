@@ -44,8 +44,8 @@ def solve_problem():
 
         # Populate graph
         for i in range(0, 2*number_of_nodes, 2):
-            graph.setdefault(i, set()).add(edges[i+1])
-            graph.setdefault(i+1, set()).add(edges[i])
+            graph.setdefault(edges[i], set()).add(edges[i+1])
+            graph.setdefault(edges[i+1], set()).add(edges[i])
         del edges, i
 
         # Solve test cases for this graph
