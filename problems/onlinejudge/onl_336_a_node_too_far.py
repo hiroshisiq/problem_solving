@@ -35,7 +35,7 @@ def breadth_first_search(graph: Graph, start: int, ttl: int) -> int:
     while queue:
         node = queue.popleft()
 
-        for neighbour in graph.get(node, set()):
+        for neighbour in graph.setdefault(node, set()):
             if neighbour not in visited:
                 visited.add(neighbour)
                 queue.append(neighbour)
@@ -67,6 +67,7 @@ def solve_problem():
             reached_count = breadth_first_search(graph, start, ttl)
 
             unreached_count = len(graph) - reached_count
+            # Avoid using f-strings here to keep python 3.5.1 compatibility
             print("Case {}: {} nodes not reachable from node {} with TTL = {}."
                   .format(case_counter, unreached_count, start, ttl))
 
