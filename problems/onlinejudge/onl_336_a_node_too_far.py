@@ -74,8 +74,10 @@ def solve_problem():
             case_counter += 1
 
         # Read empty line and next test case size
-        input()
-        number_of_nodes = int(input())
+        number_of_nodes = input()
+        while not number_of_nodes.strip():
+            number_of_nodes = input()
+        number_of_nodes = int(number_of_nodes)
 
 
 if __name__ == "__main__":
