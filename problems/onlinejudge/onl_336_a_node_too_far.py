@@ -67,8 +67,8 @@ def solve_problem():
             reached_count = breadth_first_search(graph, start, ttl)
 
             unreached_count = len(graph) - reached_count
-            print(f'Case {case_counter}: '
-                  f'{unreached_count} nodes not reachable from node {start} with TTL = {ttl}.')
+            print("Case {}: {} nodes not reachable from node {} with TTL = {}."
+                  .format(case_counter, unreached_count, start, ttl))
 
             case_counter += 1
 
