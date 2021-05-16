@@ -28,8 +28,21 @@ def read_test_case(number_of_nodes: int):
 
 
 def breadth_first_search(graph: Graph, start: int, ttl: int) -> int:
-    # reached nodes
-    return 0
+    visited = set([start])
+    queue = deque([start])
+    ttl_dict = {start: 0}
+
+    while queue:
+        node = queue.popleft()
+
+        for neighbour in graph[node]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+                ttl_dict[neighbour] = ttl_dict[node] + 1
+
+    reached_nodes = list(filter(lambda x: (ttl_dict[x] <= ttl), ttl_dict))
+    return len(reached_nodes)
 
 
 def solve_problem():
@@ -53,8 +66,9 @@ def solve_problem():
             start, ttl = vertex_ttl[i:i+2]
             reached_count = breadth_first_search(graph, start, ttl)
 
+            unreached_count = len(graph) - reached_count
             print(f'Case {case_counter}: '
-                  f'{number_of_nodes-reached_count} nodes not reachable from node {start} with TTL = {ttl}.')
+                  f'{unreached_count} nodes not reachable from node {start} with TTL = {ttl}.')
 
             case_counter += 1
 
