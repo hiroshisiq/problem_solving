@@ -7,7 +7,8 @@ EXECUTABLE_PATH = './problems/urionlinejudge/uri_1123_route_change.py'
 
 
 @pytest.mark.parametrize(
-    'input_path, output_path',    [(f'{RESOURCES_PATH}/case_1.in', f'{RESOURCES_PATH}/case_1.out')]
+    'input_path, output_path',
+    [(f'{RESOURCES_PATH}/case_1.in', f'{RESOURCES_PATH}/case_1.out')]
 )
 def test_uri_1123_route_change(input_path: str, output_path: str):
     got = run_script(EXECUTABLE_PATH, input_path)
