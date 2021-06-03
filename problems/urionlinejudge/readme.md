@@ -7,3 +7,4 @@ The challenges included in this section can all be found at https://www.urionlin
 - [2448](https://www.urionlinejudge.com.br/judge/en/problems/view/2448) Postman
 - [1076](https://www.urionlinejudge.com.br/judge/pt/problems/view/1076) Drawing Mazes
 - [1583](https://www.urionlinejudge.com.br/judge/en/problems/view/1583) Contamination
+- [1123](https://www.urionlinejudge.com.br/judge/en/problems/view/1123) Route Change

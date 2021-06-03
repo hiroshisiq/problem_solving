@@ -24,12 +24,12 @@ python scripts/update_readme.py
 ## Contributing to the repository 
 There is a script at `/scripts` to create a boilerplate for you problem.
 ```shell
-python scripts/crate_boilerplate.py --provider <problem_provider> --id <problem_id> --name <problem_name_with_underscore> --url <problem_url>
+python scripts/create_boilerplate.py --provider <problem_provider> --id <problem_id> --name <problem_name_with_underscore> --url <problem_url>
 ```
 
 Use example:
 ```shell
-python scripts/crate_boilerplate.py --provider urionlinejudge --id 1076 --name drawing_mazes --url https://www.urionlinejudge.com.br/judge/pt/problems/view/1076
+python scripts/create_boilerplate.py --provider urionlinejudge --id 1076 --name drawing_mazes --url https://www.urionlinejudge.com.br/judge/pt/problems/view/1076
 ```
 
 ## Content
@@ -55,6 +55,7 @@ The challenges included in this section can all be found at https://www.urionlin
 - [2448](https://www.urionlinejudge.com.br/judge/en/problems/view/2448) Postman
 - [1076](https://www.urionlinejudge.com.br/judge/pt/problems/view/1076) Drawing Mazes
 - [1583](https://www.urionlinejudge.com.br/judge/en/problems/view/1583) Contamination
+- [1123](https://www.urionlinejudge.com.br/judge/en/problems/view/1123) Route Change
 ### Code Forces
 The challenges included in this section can all be found at https://codeforces.com/
 
