@@ -76,9 +76,6 @@ def solve_problem():
             print("Case {}: {} nodes not reachable from node {} with TTL = {}."
                   .format(case_counter, unreached_count, start, ttl))
 
-            if case_counter == 319:
-                a = 1
-
             case_counter += 1
 
         # Read empty line and next test case size
