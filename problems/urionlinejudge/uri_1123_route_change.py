@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 from collections import namedtuple
-from typing import List
+from typing import List, Tuple
 
 TestCase = namedtuple('TestCase', ['number_of_cities', 'number_of_roads', 'route_size', 'repair_city'])
 Graph = List[List[int]]
@@ -16,7 +16,7 @@ def is_valid_test_case(test_case: TestCase) -> bool:
     return any(list(test_case))
 
 
-def dijkstra(graph: Graph, start: int, end: int) -> List[int]:
+def dijkstra(graph: Graph, start: int, end: int) -> Tuple[List[int], List[int]]:
     # Create arrays
     dist = [sys.maxsize] * len(graph)
     prev = [None] * len(graph)
@@ -27,8 +27,16 @@ def dijkstra(graph: Graph, start: int, end: int) -> List[int]:
 
     # Search
     while queue:
-        vertex = dist.index(min([dist[i] for i in queue]))
+        vertex = min([(dist[i], i) for i in queue])[1]
         queue.remove(vertex)
+
+        # Problem specific restriction (force service route)
+        if vertex < end:
+            alternative_dist = dist[vertex] + graph[vertex][vertex + 1]
+            if alternative_dist < dist[vertex + 1]:
+                dist[vertex + 1] = alternative_dist
+                prev[vertex + 1] = vertex
+            continue
 
         for neighbor, toll_fee in enumerate(graph[vertex]):
             if toll_fee is None or neighbor not in queue:
