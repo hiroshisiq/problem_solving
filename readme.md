@@ -56,6 +56,7 @@ The challenges included in this section can all be found at https://www.urionlin
 - [1076](https://www.urionlinejudge.com.br/judge/pt/problems/view/1076) Drawing Mazes
 - [1583](https://www.urionlinejudge.com.br/judge/en/problems/view/1583) Contamination
 - [1123](https://www.urionlinejudge.com.br/judge/en/problems/view/1123) Route Change
+- [1152](https://www.urionlinejudge.com.br/judge/en/problems/view/1152) Dark Roads
 ### Code Forces
 The challenges included in this section can all be found at https://codeforces.com/
 
