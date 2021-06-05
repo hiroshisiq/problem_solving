@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# TIME EXCEEDED AT URI JUDGE ONLINE BUT WORKS FOR TEST CASE
 import sys
 from typing import Set, Dict
 
